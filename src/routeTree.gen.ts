@@ -10,33 +10,156 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as PortfolioRouteImport } from './routes/portfolio'
+import { Route as ServicesIndexRouteImport } from './routes/services.index'
+import { Route as ServicesAiAutomationsRouteImport } from './routes/services.ai-automations'
+import { Route as ServicesDigitalMarketingRouteImport } from './routes/services.digital-marketing'
+import { Route as ServicesMaintenanceRouteImport } from './routes/services.maintenance'
+import { Route as ServicesWebDevelopmentRouteImport } from './routes/services.web-development'
+import { Route as ServicesWebsiteDevelopmentRouteImport } from './routes/services.website-development'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PortfolioRoute = PortfolioRouteImport.update({
+  id: '/portfolio',
+  path: '/portfolio',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesIndexRoute = ServicesIndexRouteImport.update({
+  id: '/services/',
+  path: '/services/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesAiAutomationsRoute = ServicesAiAutomationsRouteImport.update({
+  id: '/services/ai-automations',
+  path: '/services/ai-automations',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesDigitalMarketingRoute =
+  ServicesDigitalMarketingRouteImport.update({
+    id: '/services/digital-marketing',
+    path: '/services/digital-marketing',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ServicesMaintenanceRoute = ServicesMaintenanceRouteImport.update({
+  id: '/services/maintenance',
+  path: '/services/maintenance',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesWebDevelopmentRoute = ServicesWebDevelopmentRouteImport.update({
+  id: '/services/web-development',
+  path: '/services/web-development',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesWebsiteDevelopmentRoute =
+  ServicesWebsiteDevelopmentRouteImport.update({
+    id: '/services/website-development',
+    path: '/services/website-development',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/portfolio': typeof PortfolioRoute
+  '/services/ai-automations': typeof ServicesAiAutomationsRoute
+  '/services/digital-marketing': typeof ServicesDigitalMarketingRoute
+  '/services/maintenance': typeof ServicesMaintenanceRoute
+  '/services/web-development': typeof ServicesWebDevelopmentRoute
+  '/services/website-development': typeof ServicesWebsiteDevelopmentRoute
+  '/services/': typeof ServicesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/portfolio': typeof PortfolioRoute
+  '/services/ai-automations': typeof ServicesAiAutomationsRoute
+  '/services/digital-marketing': typeof ServicesDigitalMarketingRoute
+  '/services/maintenance': typeof ServicesMaintenanceRoute
+  '/services/web-development': typeof ServicesWebDevelopmentRoute
+  '/services/website-development': typeof ServicesWebsiteDevelopmentRoute
+  '/services': typeof ServicesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/contact': typeof ContactRoute
+  '/portfolio': typeof PortfolioRoute
+  '/services/ai-automations': typeof ServicesAiAutomationsRoute
+  '/services/digital-marketing': typeof ServicesDigitalMarketingRoute
+  '/services/maintenance': typeof ServicesMaintenanceRoute
+  '/services/web-development': typeof ServicesWebDevelopmentRoute
+  '/services/website-development': typeof ServicesWebsiteDevelopmentRoute
+  '/services/': typeof ServicesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/portfolio'
+    | '/services/ai-automations'
+    | '/services/digital-marketing'
+    | '/services/maintenance'
+    | '/services/web-development'
+    | '/services/website-development'
+    | '/services/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/portfolio'
+    | '/services/ai-automations'
+    | '/services/digital-marketing'
+    | '/services/maintenance'
+    | '/services/web-development'
+    | '/services/website-development'
+    | '/services'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/portfolio'
+    | '/services/ai-automations'
+    | '/services/digital-marketing'
+    | '/services/maintenance'
+    | '/services/web-development'
+    | '/services/website-development'
+    | '/services/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  ContactRoute: typeof ContactRoute
+  PortfolioRoute: typeof PortfolioRoute
+  ServicesAiAutomationsRoute: typeof ServicesAiAutomationsRoute
+  ServicesDigitalMarketingRoute: typeof ServicesDigitalMarketingRoute
+  ServicesMaintenanceRoute: typeof ServicesMaintenanceRoute
+  ServicesWebDevelopmentRoute: typeof ServicesWebDevelopmentRoute
+  ServicesWebsiteDevelopmentRoute: typeof ServicesWebsiteDevelopmentRoute
+  ServicesIndexRoute: typeof ServicesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +171,83 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/portfolio': {
+      id: '/portfolio'
+      path: '/portfolio'
+      fullPath: '/portfolio'
+      preLoaderRoute: typeof PortfolioRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/': {
+      id: '/services/'
+      path: '/services'
+      fullPath: '/services/'
+      preLoaderRoute: typeof ServicesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/ai-automations': {
+      id: '/services/ai-automations'
+      path: '/services/ai-automations'
+      fullPath: '/services/ai-automations'
+      preLoaderRoute: typeof ServicesAiAutomationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/digital-marketing': {
+      id: '/services/digital-marketing'
+      path: '/services/digital-marketing'
+      fullPath: '/services/digital-marketing'
+      preLoaderRoute: typeof ServicesDigitalMarketingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/maintenance': {
+      id: '/services/maintenance'
+      path: '/services/maintenance'
+      fullPath: '/services/maintenance'
+      preLoaderRoute: typeof ServicesMaintenanceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/web-development': {
+      id: '/services/web-development'
+      path: '/services/web-development'
+      fullPath: '/services/web-development'
+      preLoaderRoute: typeof ServicesWebDevelopmentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/website-development': {
+      id: '/services/website-development'
+      path: '/services/website-development'
+      fullPath: '/services/website-development'
+      preLoaderRoute: typeof ServicesWebsiteDevelopmentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  ContactRoute: ContactRoute,
+  PortfolioRoute: PortfolioRoute,
+  ServicesAiAutomationsRoute: ServicesAiAutomationsRoute,
+  ServicesDigitalMarketingRoute: ServicesDigitalMarketingRoute,
+  ServicesMaintenanceRoute: ServicesMaintenanceRoute,
+  ServicesWebDevelopmentRoute: ServicesWebDevelopmentRoute,
+  ServicesWebsiteDevelopmentRoute: ServicesWebsiteDevelopmentRoute,
+  ServicesIndexRoute: ServicesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
