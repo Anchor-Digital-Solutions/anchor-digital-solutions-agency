@@ -9,6 +9,9 @@ export const getRouter = () => {
     routeTree,
     context: { queryClient },
     scrollRestoration: true,
+    // Serve trailing-slash URLs as-is instead of 307-redirecting them; the
+    // static prerenderer requests "/page/" and would otherwise redirect-loop.
+    trailingSlash: "preserve",
     defaultPreloadStaleTime: 0,
   });
 
