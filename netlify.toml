@@ -2,7 +2,5 @@
   command = "bun run build"
   publish = "dist/client"
 
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+# No SPA fallback redirect: pages are server-rendered by the Nitro/Netlify
+# function at request time, so all routes are handled by the server.

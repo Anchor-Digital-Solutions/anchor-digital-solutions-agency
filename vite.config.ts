@@ -11,12 +11,8 @@ export default defineConfig({
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this
     server: { entry: "server" },
-    // Prerender all pages to static HTML in dist/client so the site can be
-    // deployed to static hosts (e.g. Netlify) without a server.
-    prerender: {
-      enabled: true,
-      crawlLinks: true,
-      failOnError: true,
-    },
+    // Prerendering disabled: the prerender pass imports dist/server/server.js,
+    // which is not produced under Netlify's build preset and fails the build.
+    prerender: { enabled: false },
   },
 });
